@@ -37,7 +37,7 @@
   header{position:sticky;top:0;z-index:20;background:rgba(7,11,23,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
   .logo{font-weight:800;letter-spacing:.5px;font-size:1.1rem}
-  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul{display:flex;gap:20px;list-style:none}
   nav ul a{color:var(--muted);font-size:.92rem;transition:.2s}
   nav ul a:hover{color:var(--c1)}
 
@@ -110,7 +110,12 @@
   .fill{height:100%;width:0;background:var(--grad);border-radius:10px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
   .edu{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .edu small{color:var(--c1);letter-spacing:1px;text-transform:uppercase;font-weight:700;font-size:.72rem}
-  .edu p{margin:4px 0 0}
+  .edu p{margin:4px 0 0;font-size:.92rem}
+
+  /* certifications */
+  .cert img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;margin-bottom:14px;background:#fff}
+  .cert .meta{color:var(--muted);font-size:.85rem;margin-top:6px}
+  .cert .meta b{color:var(--text)}
 
   /* process */
   .steps{counter-reset:s}
@@ -157,7 +162,7 @@
   @media(max-width:800px){
     .hero,.about,.contact-wrap{grid-template-columns:1fr}
     nav ul{gap:10px}
-    nav ul a{font-size:.78rem}
+    nav ul a{font-size:.74rem}
     .hero{padding-top:44px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -178,6 +183,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certificates</a></li>
         <li><a href="#packages">Packages</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -198,10 +204,14 @@
       <p class="lead">I turn raw data into dashboards and insights with Power BI, SQL, Python and Excel, and I build fast, modern websites for growing businesses.</p>
       <a href="#contact" class="btn btn-primary">Hire Me</a>
       <a href="#work" class="btn btn-ghost">View My Work</a>
+      <!-- Turn ON after you upload Gulam_Hussain_CV.pdf: remove the comment markers
       <a href="Gulam_Hussain_CV.pdf" class="btn btn-ghost" download>⬇ Download CV</a>
+      -->
       <div class="platforms">Find me on:
         <a href="https://www.fiverr.com/kg_hussain" target="_blank" rel="noopener">Fiverr</a>
+        <!-- Turn ON after your Upwork profile is live: replace YOUR-UPWORK-ID and remove the comment markers
         <a href="https://www.upwork.com/freelancers/YOUR-UPWORK-ID" target="_blank" rel="noopener">Upwork</a>
+        -->
         <a href="https://github.com/kghussain" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -224,9 +234,9 @@
   <div class="container">
     <div class="stats">
       <div class="stat"><b>DA + BI</b><small>Analytics & dashboards</small></div>
+      <div class="stat"><b>2</b><small>Analytics certifications</small></div>
       <div class="stat"><b>4</b><small>Languages spoken</small></div>
       <div class="stat"><b>Steel & Trading</b><small>Industry experience</small></div>
-      <div class="stat"><b>Fast</b><small>Clear replies & delivery</small></div>
     </div>
   </div>
 
@@ -316,8 +326,37 @@
         <div class="skill"><div class="skill-head"><span>Excel</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
         <div class="skill"><div class="skill-head"><span>Web (HTML, CSS, JS)</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
         <div class="edu">
-          <small>Education</small>
+          <small>Education & Training</small>
           <p>Madurai Kamaraj University</p>
+          <p>Data Analytics, SLA (2025)</p>
+          <p>Business and Marketing Analytics with AI Tools, GUVI (2026)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container reveal">
+      <span class="tag">Credentials</span>
+      <h2>Certifications</h2>
+      <p class="sub">Formal training in data analytics and business intelligence. Click a certificate to view it full size.</p>
+      <div class="grid">
+        <div class="card cert">
+          <a href="sla_certificate.jpeg" target="_blank" rel="noopener">
+            <img src="sla_certificate.jpeg" alt="SLA Data Analytics certificate" loading="lazy">
+          </a>
+          <h3>Data Analytics</h3>
+          <p>SLA Institute, Chennai</p>
+          <p class="meta"><b>Grade A</b> · Issued 08 Aug 2025</p>
+        </div>
+        <div class="card cert">
+          <a href="guvi_certificate.png" target="_blank" rel="noopener">
+            <img src="guvi_certificate.png" alt="GUVI Business and Marketing Analytics with AI Tools certificate" loading="lazy">
+          </a>
+          <h3>Business and Marketing Analytics with AI Tools</h3>
+          <p>GUVI (HCL), 4-month program</p>
+          <p class="meta">Issued 16 Jun 2026</p>
         </div>
       </div>
     </div>
@@ -372,7 +411,7 @@
       <p class="sub">Quick answers before we start.</p>
       <details><summary>How long does a project take?</summary><p>A simple website or dashboard usually takes 3-7 days. Larger projects take longer, and I give you a timeline before I start.</p></details>
       <details><summary>Which tools do you use?</summary><p>Power BI, SQL, Python and Excel for data work, and HTML, CSS and JavaScript for websites.</p></details>
-      <details><summary>Do you work with international clients?</summary><p>Yes. I speak English, Tamil, Urdu and Hindi, and I work with clients through Upwork, Fiverr or directly.</p></details>
+      <details><summary>Do you work with international clients?</summary><p>Yes. I speak English, Tamil, Urdu and Hindi, and I work with clients through Fiverr or directly.</p></details>
       <details><summary>Can you work with my existing data?</summary><p>Yes. Send me your Excel, CSV or database export, and I will clean it and turn it into clear reports and dashboards.</p></details>
     </div>
   </section>
