@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gulam Hussain | Data Analyst, BI & Web Developer</title>
+<meta name="description" content="Gulam Hussain - Data Analyst (DA), Business Intelligence (BI) and Web Developer from Madurai, India. Power BI, SQL, Python, Excel and responsive websites.">
+<meta property="og:title" content="Gulam Hussain | Data Analyst, BI & Web Developer">
+<meta property="og:description" content="Power BI, SQL, Python, Excel dashboards and fast business websites.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="my_pic.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<style>
+  :root{
+    --bg:#070b17; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.1);
+    --text:#e6ecff; --muted:#9aa7c7;
+    --c1:#22d3ee; --c2:#a78bfa; --c3:#f472b6;
+    --grad:linear-gradient(120deg,var(--c1),var(--c2),var(--c3));
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1050px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+
+  /* background glow */
+  .blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.33;z-index:0;animation:float 14s ease-in-out infinite;pointer-events:none}
+  .b1{width:420px;height:420px;background:var(--c2);top:-120px;left:-100px}
+  .b2{width:380px;height:380px;background:var(--c1);top:35%;right:-120px;animation-delay:-4s}
+  .b3{width:340px;height:340px;background:var(--c3);bottom:-100px;left:25%;animation-delay:-8s}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-50px)}}
+
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+  @keyframes shine{to{background-position:200% center}}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:rgba(7,11,23,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+  .logo{font-weight:800;letter-spacing:.5px;font-size:1.1rem}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav ul a{color:var(--muted);font-size:.92rem;transition:.2s}
+  nav ul a:hover{color:var(--c1)}
+
+  /* hero */
+  .hero{padding:80px 0 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+  .avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 20%;padding:4px;background:var(--grad);margin-bottom:18px;box-shadow:0 0 40px rgba(167,139,250,.55);display:block}
+  .avatar-fallback{width:150px;height:150px;border-radius:50%;margin-bottom:18px;background:var(--grad);color:#07101f;font-weight:800;font-size:2.6rem;display:none;align-items:center;justify-content:center}
+  .badge{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:30px;font-size:.82rem;color:var(--muted);margin-bottom:16px;background:var(--card)}
+  .badge i{display:inline-block;width:8px;height:8px;background:#22c55e;border-radius:50%;margin-right:8px;box-shadow:0 0 8px #22c55e}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.1;margin-bottom:10px;font-weight:800}
+  .typing{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--c1);min-height:2em;font-weight:600}
+  .typing::after{content:"|";margin-left:3px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .lead{color:var(--muted);max-width:520px;margin:12px 0 26px}
+  .btn{display:inline-block;padding:12px 24px;border-radius:10px;font-weight:700;margin:6px 8px 6px 0;transition:.25s;border:1px solid transparent}
+  .btn-primary{background:var(--grad);color:#07101f}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(167,139,250,.4)}
+  .btn-ghost{border-color:var(--line);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--c1);color:var(--c1);transform:translateY(-3px)}
+  .platforms{margin-top:14px;color:var(--muted);font-size:.88rem}
+  .platforms a{color:var(--c1);font-weight:600;margin-right:14px}
+  .platforms a:hover{text-decoration:underline}
+
+  /* dashboard preview */
+  .dash{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(8px);animation:float 8s ease-in-out infinite;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .dash-top{display:flex;gap:6px;margin-bottom:14px}
+  .dash-top span{width:10px;height:10px;border-radius:50%;background:#ef4444}
+  .dash-top span:nth-child(2){background:#f59e0b}
+  .dash-top span:nth-child(3){background:#22c55e}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+  .kpi{background:rgba(255,255,255,.05);border-radius:10px;padding:10px}
+  .kpi small{color:var(--muted);font-size:.7rem;display:block}
+  .kpi b{font-size:1.2rem}
+  .bars{display:flex;align-items:flex-end;gap:8px;height:90px}
+  .bars div{flex:1;background:var(--grad);border-radius:5px 5px 0 0;height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1)}
+  .dash-label{color:var(--muted);font-size:.72rem;margin-top:8px;text-align:center}
+
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;padding:10px 0 30px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat b{display:block;font-size:1.3rem}
+  .stat small{color:var(--muted)}
+
+  /* sections */
+  section{padding:70px 0}
+  .tag{color:var(--c1);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+  h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:6px 0 10px}
+  .sub{color:var(--muted);margin-bottom:34px;max-width:560px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
+  .card:hover{transform:translateY(-6px);border-color:rgba(167,139,250,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .icon{font-size:1.9rem;margin-bottom:10px}
+  .card h3{margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.94rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chips span{background:rgba(34,211,238,.1);color:var(--c1);border:1px solid rgba(34,211,238,.25);padding:3px 11px;border-radius:20px;font-size:.78rem}
+  .link{display:inline-block;margin-top:14px;color:var(--c1);font-weight:600}
+
+  /* about + skills */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .about-head{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+  .about-pic{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 20%;padding:3px;background:var(--grad);flex-shrink:0}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .facts div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:.88rem}
+  .facts small{display:block;color:var(--muted);font-size:.72rem}
+  .skill{margin-bottom:16px}
+  .skill-head{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:6px}
+  .track{height:8px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
+  .fill{height:100%;width:0;background:var(--grad);border-radius:10px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+  .edu{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .edu small{color:var(--c1);letter-spacing:1px;text-transform:uppercase;font-weight:700;font-size:.72rem}
+  .edu p{margin:4px 0 0}
+
+  /* process */
+  .steps{counter-reset:s}
+  .step::before{counter-increment:s;content:"0" counter(s);font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:.94rem}
+
+  /* packages */
+  .price{font-size:1.7rem;font-weight:800;margin:6px 0 10px}
+  .price small{font-size:.8rem;color:var(--muted);font-weight:500}
+  .card ul{list-style:none;margin-top:10px}
+  .card li{color:var(--muted);font-size:.92rem;padding:4px 0 4px 22px;position:relative}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--c1);font-weight:700}
+  .popular{border-color:rgba(167,139,250,.6);box-shadow:0 0 0 1px rgba(167,139,250,.3)}
+
+  /* faq */
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--muted);margin-top:10px;font-size:.94rem}
+
+  /* contact */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  a.row{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;transition:.25s}
+  a.row:hover{border-color:var(--c1);transform:translateX(6px)}
+  a.row .ic{font-size:1.4rem}
+  a.row small{color:var(--muted);display:block;font-size:.75rem}
+  a.row div{word-break:break-word}
+  form{display:grid;gap:14px;align-content:start}
+  input,textarea,select{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
+  select option{background:#0f172a;color:var(--text)}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--c1);box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+  textarea{min-height:130px;resize:vertical}
+  button{cursor:pointer;font:inherit}
+  footer{text-align:center;padding:30px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.88rem;position:relative;z-index:1}
+
+  /* floating buttons */
+  .wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:1.7rem;z-index:30;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .top{position:fixed;right:28px;bottom:88px;width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--c1);display:none;align-items:center;justify-content:center;z-index:30;font-size:1.1rem;backdrop-filter:blur(8px)}
+  .top.show{display:flex}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(max-width:800px){
+    .hero,.about,.contact-wrap{grid-template-columns:1fr}
+    nav ul{gap:10px}
+    nav ul a{font-size:.78rem}
+    .hero{padding-top:44px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo grad-text">Gulam Hussain</div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="container hero">
+    <div>
+      <img class="avatar" src="my_pic.jpg" alt="Gulam Hussain"
+           onerror="this.style.display='none';document.getElementById('av').style.display='flex'">
+      <div class="avatar-fallback" id="av">GH</div>
+      <span class="badge"><i></i>Available for freelance projects</span>
+      <h1>Hi, I'm <span class="grad-text">Gulam Hussain</span></h1>
+      <div class="typing" id="typing"></div>
+      <p class="lead">I turn raw data into dashboards and insights with Power BI, SQL, Python and Excel, and I build fast, modern websites for growing businesses.</p>
+      <a href="#contact" class="btn btn-primary">Hire Me</a>
+      <a href="#work" class="btn btn-ghost">View My Work</a>
+      <a href="Gulam_Hussain_CV.pdf" class="btn btn-ghost" download>⬇ Download CV</a>
+      <div class="platforms">Find me on:
+        <a href="https://www.fiverr.com/kg_hussain" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/YOUR-UPWORK-ID" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://github.com/kghussain" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <div class="dash" aria-hidden="true">
+      <div class="dash-top"><span></span><span></span><span></span></div>
+      <div class="kpis">
+        <div class="kpi"><small>Sample stock (MT)</small><b id="k1">0</b></div>
+        <div class="kpi"><small>Sample orders</small><b id="k2">0</b></div>
+      </div>
+      <div class="bars" id="bars">
+        <div data-h="45"></div><div data-h="70"></div><div data-h="55"></div>
+        <div data-h="88"></div><div data-h="62"></div><div data-h="95"></div>
+      </div>
+      <div class="dash-label">Sample BI dashboard preview</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b>DA + BI</b><small>Analytics & dashboards</small></div>
+      <div class="stat"><b>4</b><small>Languages spoken</small></div>
+      <div class="stat"><b>Steel & Trading</b><small>Industry experience</small></div>
+      <div class="stat"><b>Fast</b><small>Clear replies & delivery</small></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container reveal">
+      <span class="tag">What I do</span>
+      <h2>Services</h2>
+      <p class="sub">Three areas where I can help your business grow.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Data Analytics (DA)</h3>
+          <p>Data cleaning, analysis and clear reporting using Excel, SQL and Python, so you can see what your numbers are really saying.</p>
+          <div class="chips"><span>Excel</span><span>SQL</span><span>Python</span></div>
+        </div>
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Business Intelligence (BI)</h3>
+          <p>Interactive Power BI dashboards and KPI reports for sales, stock and operations, built to track performance at a glance.</p>
+          <div class="chips"><span>Power BI</span><span>Dashboards</span><span>KPIs</span></div>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Web Design & Development</h3>
+          <p>Responsive business websites, landing pages and portfolios that look great on every device and load fast.</p>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="container reveal">
+      <span class="tag">Portfolio</span>
+      <h2>Selected Work</h2>
+      <p class="sub">A few examples of what I build. More on my GitHub.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🏗️</div>
+          <h3>Steel Trading Website</h3>
+          <p>Multi-section business website with product listings, enquiry form and a mobile-friendly layout.</p>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a class="link" href="https://github.com/kghussain" target="_blank" rel="noopener">View project →</a>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Stock Report Dashboard</h3>
+          <p>Interactive stock report for steel products with quantities in metric tons and clear, instant summaries.</p>
+          <div class="chips"><span>DA</span><span>BI</span><span>Inventory</span></div>
+          <a class="link" href="https://github.com/kghussain" target="_blank" rel="noopener">View project →</a>
+        </div>
+        <div class="card">
+          <div class="icon">💹</div>
+          <h3>Sales & Stock BI Report</h3>
+          <p>Power BI dashboard that summarizes stock levels, sales and trends in simple charts for quick decisions.</p>
+          <div class="chips"><span>Power BI</span><span>SQL</span><span>Charts</span></div>
+          <a class="link" href="https://github.com/kghussain" target="_blank" rel="noopener">View project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about reveal">
+      <div>
+        <span class="tag">About me</span>
+        <div class="about-head">
+          <img class="about-pic" src="my_pic.jpg" alt="Gulam Hussain" onerror="this.style.display='none'">
+          <h2 style="margin:0">Who I am</h2>
+        </div>
+        <p>I'm Gulam Hussain, a Data Analyst and Web Developer from Madurai, Tamil Nadu. I have hands-on experience in steel trading and inventory management, so I understand how real businesses track stock, orders and sales.</p>
+        <p>I communicate clearly, deliver on time, and will always tell you honestly what will and won't work before I start.</p>
+        <div class="facts">
+          <div><small>Location</small>Madurai, India</div>
+          <div><small>Languages</small>English, Tamil, Urdu, Hindi</div>
+          <div><small>Focus</small>DA, BI and Web</div>
+          <div><small>Availability</small>Open for projects</div>
+        </div>
+      </div>
+      <div>
+        <div class="skill"><div class="skill-head"><span>Power BI</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+        <div class="skill"><div class="skill-head"><span>SQL</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+        <div class="skill"><div class="skill-head"><span>Python</span><span>70%</span></div><div class="track"><div class="fill" data-w="70"></div></div></div>
+        <div class="skill"><div class="skill-head"><span>Excel</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+        <div class="skill"><div class="skill-head"><span>Web (HTML, CSS, JS)</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+        <div class="edu">
+          <small>Education</small>
+          <p>Madurai Kamaraj University</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container reveal">
+      <span class="tag">How I work</span>
+      <h2>Simple 4-step process</h2>
+      <p class="sub">Clear communication from the first message to final delivery.</p>
+      <div class="grid steps">
+        <div class="step"><h3>Understand</h3><p>You tell me your goal, data or website idea, and I ask the right questions.</p></div>
+        <div class="step"><h3>Plan</h3><p>I send a clear scope, timeline and price before starting any work.</p></div>
+        <div class="step"><h3>Build</h3><p>I build and share progress so you can give feedback along the way.</p></div>
+        <div class="step"><h3>Deliver</h3><p>Final files, a short walkthrough and support after delivery.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="container reveal">
+      <span class="tag">Pricing</span>
+      <h2>Packages</h2>
+      <p class="sub">Starting prices. Final quote depends on your project. Message me for an exact price.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Starter Website</h3>
+          <div class="price">from ₹4,000 <small>/ project</small></div>
+          <ul><li>One-page responsive website</li><li>Contact and WhatsApp buttons</li><li>Mobile-friendly design</li><li>Free hosting setup help</li></ul>
+        </div>
+        <div class="card popular">
+          <h3>Excel / Power BI Dashboard</h3>
+          <div class="price">from ₹6,000 <small>/ project</small></div>
+          <ul><li>Data cleaning and analysis</li><li>Interactive KPI dashboard</li><li>Charts and summary report</li><li>Short walkthrough</li></ul>
+        </div>
+        <div class="card">
+          <h3>Business Website</h3>
+          <div class="price">from ₹12,000 <small>/ project</small></div>
+          <ul><li>Multi-section business site</li><li>Product / service pages</li><li>Enquiry form and SEO basics</li><li>1 round of revisions</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container reveal">
+      <span class="tag">Questions</span>
+      <h2>FAQ</h2>
+      <p class="sub">Quick answers before we start.</p>
+      <details><summary>How long does a project take?</summary><p>A simple website or dashboard usually takes 3-7 days. Larger projects take longer, and I give you a timeline before I start.</p></details>
+      <details><summary>Which tools do you use?</summary><p>Power BI, SQL, Python and Excel for data work, and HTML, CSS and JavaScript for websites.</p></details>
+      <details><summary>Do you work with international clients?</summary><p>Yes. I speak English, Tamil, Urdu and Hindi, and I work with clients through Upwork, Fiverr or directly.</p></details>
+      <details><summary>Can you work with my existing data?</summary><p>Yes. Send me your Excel, CSV or database export, and I will clean it and turn it into clear reports and dashboards.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container reveal">
+      <span class="tag">Get in touch</span>
+      <h2>Let's work together</h2>
+      <p class="sub">Tell me about your project and I'll reply with a clear plan and timeline.</p>
+      <div class="contact-wrap">
+        <div>
+          <a class="row" href="tel:+919994755570"><span class="ic">📞</span><div><small>Call</small>+91 99947 55570</div></a>
+          <a class="row" href="https://wa.me/919994755570" target="_blank" rel="noopener"><span class="ic">💬</span><div><small>WhatsApp</small>Chat with me</div></a>
+          <a class="row" href="mailto:gulamhussain13122000@gmail.com"><span class="ic">✉️</span><div><small>Email</small>gulamhussain13122000@gmail.com</div></a>
+          <a class="row" href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID" target="_blank" rel="noopener"><span class="ic">🔗</span><div><small>LinkedIn</small>Gulam Hussain</div></a>
+          <a class="row" href="https://github.com/kghussain" target="_blank" rel="noopener"><span class="ic">💻</span><div><small>GitHub</small>kghussain</div></a>
+          <a class="row" href="https://www.fiverr.com/kg_hussain" target="_blank" rel="noopener"><span class="ic">🟢</span><div><small>Fiverr</small>kg_hussain</div></a>
+        </div>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="email" id="email" placeholder="Your email" required>
+          <select id="service">
+            <option>Website Design & Development</option>
+            <option>Data Analytics (DA)</option>
+            <option>Business Intelligence (BI) Dashboard</option>
+            <option>Other</option>
+          </select>
+          <textarea id="message" placeholder="Describe your project" required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="top" id="top" href="#" aria-label="Back to top">↑</a>
+<a class="wa" href="https://wa.me/919994755570" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<footer>© <span id="year"></span> Gulam Hussain. All rights reserved.</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Typing effect
+  const roles = ["Data Analyst (DA)", "Business Intelligence (BI)", "Power BI Developer", "Web Developer"];
+  const el = document.getElementById('typing');
+  let r = 0, c = 0, del = false;
+  (function type(){
+    const word = roles[r];
+    el.textContent = word.slice(0, c);
+    if(!del && c < word.length){ c++; setTimeout(type, 90); }
+    else if(!del){ del = true; setTimeout(type, 1300); }
+    else if(c > 0){ c--; setTimeout(type, 45); }
+    else { del = false; r = (r + 1) % roles.length; setTimeout(type, 300); }
+  })();
+
+  // Count-up numbers in the preview card
+  function count(id, end, ms){
+    const e = document.getElementById(id), t0 = performance.now();
+    (function step(t){
+      const p = Math.min((t - t0) / ms, 1);
+      e.textContent = Math.floor(end * p).toLocaleString();
+      if(p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  count('k1', 1250, 1800); count('k2', 86, 1800);
+  setTimeout(() => document.querySelectorAll('#bars div').forEach(b => b.style.height = b.dataset.h + '%'), 300);
+
+  // Reveal on scroll and animate skill bars
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if(en.isIntersecting){
+        en.target.classList.add('show');
+        en.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
+      }
+    });
+  }, {threshold: .12});
+  document.querySelectorAll('.reveal').forEach(x => io.observe(x));
+
+  // Back-to-top button
+  const topBtn = document.getElementById('top');
+  window.addEventListener('scroll', () => topBtn.classList.toggle('show', window.scrollY > 600));
+  topBtn.addEventListener('click', e => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+
+  // Contact form opens the visitor's email app with the message filled in
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const msg = document.getElementById('message').value;
+    const subject = encodeURIComponent("Project enquiry: " + service + " (" + name + ")");
+    const body = encodeURIComponent(msg + "\n\nService: " + service + "\nFrom: " + name + " (" + email + ")");
+    window.location.href = "mailto:gulamhussain13122000@gmail.com?subject=" + subject + "&body=" + body;
+  });
+</script>
+
+</body>
+</html>
